@@ -1,5 +1,5 @@
 #include "principal.h"
-
+//Comentario prueba
 #include <QApplication>
 
 int main(int argc, char *argv[])

@@ -1,6 +1,6 @@
 #include "acerca.h"
 #include "ui_acerca.h"
-
+//Comentario prueba
 Acerca::Acerca(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Acerca)
@@ -21,5 +21,5 @@ void Acerca::setVersion(const QString &value)
 
 void Acerca::on_Ok_clicked()//Si el boton es clickado, cierra la ventana de informacion
 {
-    this->close();
+    this->close();//Cierra la interfaz
 }

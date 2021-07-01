@@ -1,5 +1,5 @@
 ﻿#include "calculosalario.h"
-
+//Comentario prueba
 float CalculoSalario::salarioBruto() const
 {
     return m_salarioBruto;
@@ -15,7 +15,7 @@ float CalculoSalario::salarioNeto() const
     return m_salarioNeto;
 }
 
-QString CalculoSalario::getJornada()
+QString CalculoSalario::getJornada()//Casos para elegir la jornada de trabajo
 {
     switch(m_jornada){
     case 'V':
@@ -31,19 +31,19 @@ QString CalculoSalario::getJornada()
     return "N/D";
 }
 
-CalculoSalario::CalculoSalario(QObject *parent) : QObject(parent)
+CalculoSalario::CalculoSalario(QObject *parent) : QObject(parent)//Constructor default
 {
 
 }
 
-CalculoSalario::CalculoSalario(QString nombre, int horas, char jornada)
+CalculoSalario::CalculoSalario(QString nombre, int horas, char jornada)//Constructor para inicializar variable
 {
     m_nombre = nombre;
     m_horas = horas;
     m_jornada = jornada;
 }
 
-void CalculoSalario::calcular()
+void CalculoSalario::calcular()//Metodo calcular
 {
     float valorHora = 0;
     switch(m_jornada){
@@ -63,10 +63,10 @@ void CalculoSalario::calcular()
     m_salarioNeto = m_salarioBruto - m_descuento;
 }
 
-QString CalculoSalario::resultado()
+QString CalculoSalario::resultado()//Retorna el string de resultado
 {
     QString str;
-    str = "Obrero: " + m_nombre + "\n";
+    str =  "Obrero: " + m_nombre + "\n";
     str += "Horas: " + QString::number(m_horas) + "\n";
     str += "Jornada: " + getJornada() + "\n";
     str += "Salario Bruto: $" + QString::number(m_salarioBruto) + "\n";

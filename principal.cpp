@@ -1,6 +1,6 @@
 #include "principal.h"
 #include "ui_principal.h"
-
+//Comentario prueba
 #include <QtDebug>
 #include <QMessageBox>
 
@@ -69,24 +69,24 @@ void Principal::borrar()
     ui->inNombre->setFocus();
 }
 
-void Principal::nuevo()
+void Principal::nuevo()//Para hacer un nuevo calculo
 {
     ui->outResultado->clear();
 }
 
-void Principal::on_actionNuevo_triggered()
+void Principal::on_actionNuevo_triggered()//Cuando se aplasta el boton Nuevo
 {
     this->nuevo();
 }
 
-void Principal::on_actionAcerca_de_triggered()
+void Principal::on_actionAcerca_de_triggered()//Cuando se aplasta el boton Acerca de
 {
     Acerca *acercaDe = new Acerca(this);
     acercaDe->setVersion(VERSION);
     acercaDe->show();
 }
 
-void Principal::on_actionGuardar_triggered()
+void Principal::on_actionGuardar_triggered() //Cuando se aplasta el boton Guardar
 {
     QDir directorio=QDir::home();
     QString pathArchivo=directorio.absolutePath()+"  sin_nombre.txt";
@@ -97,15 +97,16 @@ void Principal::on_actionGuardar_triggered()
     QFile f(fileName);
     QTextStream out(&f);
     if(!f.open(QIODevice::WriteOnly | QIODevice::Append)){
+        //Manda ese mensaje de error si no se abre el archivo
         QMessageBox::warning(this,"Salarios","No se puede abrir el archivo"+fileName);
         return;
     }
     out<<ui->outResultado->toPlainText()<<endl;
-    f.close();
+    f.close();//Cierra el fichero de texto
 
 }
 
-void Principal::on_actionAbrir_triggered()
+void Principal::on_actionAbrir_triggered()//Cuando se aplasta el boton de Abrir
 {
     QString fileName = QFileDialog::getOpenFileName(this, "Abrir archivo",
                                                      "c:/", "config(*.txt)");
@@ -128,5 +129,5 @@ void Principal::on_actionAbrir_triggered()
        }
 
        f.close();
-   }
+}
 

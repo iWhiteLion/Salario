@@ -1,6 +1,6 @@
 #ifndef CALCULOSALARIO_H
 #define CALCULOSALARIO_H
-
+//Comentario prueba
 #include <QObject>
 
 class CalculoSalario : public QObject

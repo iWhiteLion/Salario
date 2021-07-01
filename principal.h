@@ -1,6 +1,6 @@
 #ifndef PRINCIPAL_H
 #define PRINCIPAL_H
-
+//Comentario prueba
 #include "calculosalario.h"
 #include "acerca.h"
 
